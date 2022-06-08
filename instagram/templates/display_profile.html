@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{%load bootstrap4 %}
+{%block content %}
+<br>
+<br>
+<br>
+<h2 align="center">YOUR PROFILE</h2>
+<div class="container">
+    <div class="row">
+        {%for p in profile%}
+        <div class="card mt-4 mx-auto" style="width: 20rem; margin-right: auto;">
+            <img class="card-img-top" src="{{p.profile_photo.url}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{p.user.username}}</h5>
+              <p class="card-text">{{p.bio}}</p>
+            </div>
+          </div>
+          {%endfor%}
+            
+          
+
+
+    </div>
+    <br>
+    <h2 align="center">YOUR IMAGES</h2>
+    <div class="row">
+        {%for image in images %}
+          <div class="card mt-4 mx-auto" style="width: 20rem; margin-right: auto;">
+            <img class="card-img-top" src="{{image.image_location.url}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{image.image_name}}</h5>
+              <p class="card-text">{{image.image_caption}}</p>
+            </div>
+          </div>
+
+          {%endfor%}
+
+    </div>
+
+</div>
+
+
+{%endblock%}
