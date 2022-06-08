@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%load bootstrap4 %}
+{%block content %}
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <h1>WRITE A COMMENT</h1>
+    <div class="col-md-12 mt-4 mx-auto">
+
+<form  action="{%url 'write-comment' id=image.id %}" method="POST">
+    {%csrf_token%}
+
+    {% bootstrap_form form %}
+    <input type="submit" class="btn btn-primary btn-lg" value="Write Comment">
+  </form>
+  </div>
+</div>
+</div>
+{%endblock%}
