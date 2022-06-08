@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%load bootstrap4 %}
+{%block content %}
+<br>
+<br>
+<br>
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+    {% if form.errors %}
+        <p style="color: red;"> Some Information Might be Incorrect </p>
+      {% endif %}
+    <div class="panel panel-default">
+    <div class="panel-heading"><h2>
+      Sign Up
+    </h2></div>
+    <div class="panel-body">
+  <form action='/accounts/register/' method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+      <input type="hidden" name="next" value="/">
+    </form>
+    </div>
+    </div>
+  </div>
+  </div>
+  </div>
+{%endblock%}

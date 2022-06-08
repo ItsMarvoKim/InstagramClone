@@ -1,0 +1,8 @@
+
+Hi {{user.username}}
+<p>Welcome to Insta Clone</p>
+
+Click the link below to activate your account and get started
+http://{{request.get_host}}activate/{{uid}}/{{token}}
+
+
