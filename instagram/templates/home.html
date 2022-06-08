@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{%load bootstrap4%}
+{%block content %}
+<br>
+
+<div class="container">
+<div class="row">
+  {%for image in images%}
+    <div class="card mt-4" style="width: 20rem; margin-right: auto;">
+        <img class="card-img-top" src="{{image.image_location.url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{image.image_name}}</h5>
+          <p class="card-text">{{image.image_caption}}</p>
+          <p class="card-text">Posted by:{{image.profile.user.username}}</p>
+          <a href="/likes/{{image.id}}"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></a>
+          <a href="comment/{{image.id}}"> <i class="fa fa-comment fa-2x" aria-hidden="true"></i></a>
+          <br>
+          <a href="image/{{image.id}}">MORE.....</a>
+        </div>
+      </div>
+      {%endfor%}
+      
+      
+    
+      
+      
+    
+      
+  </div>
+</div>
+{%endblock%}
